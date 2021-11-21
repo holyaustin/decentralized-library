@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen -  Dynamic JS JQuery Quiz</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+    <!-- website section start -->
+    <div class="container-fluid px-0">
+    <section class="quizbody">
+       <div class="container">
+           <div class="row">
+               <div class="col-12 d-flex text-center justify-content-center align-items-center flex-column" style="padding: 50px 0; background-color: #007bff; color: white;">
+                    <h1 class="quizh1" style="font-size: 3rem; font-weight: 700;">
+                        Quiz
+                    </h1>
+                    <h3 class="descriptionh3">
+                        Click below Button to Start the Quiz
+                    </h3>
+               </div>
+               <div class="col-12 button-div d-flex justify-content-center align-items-center">
+                   <div>
+                        <button class="btn" id="mainButton">
+                            Start Your Quiz
+                            <span></span><span></span><span></span><span></span>
+                        </button>
+                   </div>
+               </div>
+               <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                        <div class="info_box">
+                            <div class="info-title"><span>Some Rules of this Quiz</span></div>
+                            <div class="info-list">
+                                <div class="info">1. You will have only <span>20 seconds</span> per each question.</div>
+                                <div class="info">2. You can skip any question you want.</div>
+                                <div class="info">3. You can't select any option once time goes off.</div>
+                                <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+                                <div class="info">5. You'll get points on the basis of your correct answers.</div>
+                                <div class="info">6. Your skipped question will be result 0 points.</div>
+                            </div>
+                            <div class="buttons">
+                                <button class="quit btn">Exit Quiz</button>
+                                <button class="continue btn">Continue</button>
+                            </div>
+                    </div>
+               </div>
+           </div>
+       </div>
+    </section>
+    <section class="questionbody">
+        <div class="container-fluid" style="background-color: #007bff;">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                        <div class="quiz_box">
+                            <header>
+                                <div class="title">Quiz Application</div>
+                                <div class="timer">
+                                    <div class="time_left_txt">Time Left</div>
+                                    <div class="timer_sec">20</div>
+                                </div>
+                                <div class="time_line"></div>
+                            </header>
+                            <section class="qasection">
+                                <div class="que_text">
+                                    How old am I?
+                                </div>
+                                <div class="option_list containerr">
+                                    <div class="option">
+                                        <input type="radio" name="option" id="opt1" value="opt1input">
+                                        <label for="opt1" aria-label="opt1">
+                                            <span></span>
+                                            option 1
+                                        </label>
+                                    </div>
+                                
+                                    <div class="option">
+                                        <input type="radio" name="option" id="opt2" value="opt1input">
+                                        <label for="opt2" aria-label="opt2">
+                                            <span></span>
+                                            option 2
+                                        </label>
+                                    </div>
+                                
+                                    <div class="option">
+                                        <input type="radio" name="option" id="opt3" value="opt1input">
+                                        <label for="opt3" aria-label="opt3">
+                                            <span></span>
+                                            option 3
+                                        </label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="radio" name="option" id="opt4" value="opt1input">
+                                        <label for="opt4" aria-label="opt4">
+                                            <span></span>
+                                            option 4
+                                        </label>
+                                    </div>
+                                </div>
+                            </section>
+                        
+                        
+                            <footer>
+                                <div class="total_que">
+                                    <span class="QNO"></span>  of 20
+                                </div>
+                                <div class="btns">
+                                <button class="back btn">back</button>
+                                <button class="btn skip">Skip</button>
+                                <button class="btn next">Next</button>
+                                <button class="btn result">Result</button>
+                                </div>
+                            </footer>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="resultbody">
+        <div class="container-fluid" style="background-color: #007bff;">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <div class="result_box">
+                        <header class="d-flex flex-column">
+                            <div class="title" style="
+                                margin-top: 10px;
+                                font-size: 30px;
+                                font-weight: 700;
+                                color: var(--bgprm);
+                            ">Your Result</div>
+                            <div class="time_line"></div>
+                        </header>
+                        <section class="result-showing-box">
+                            <div class="answer-info">
+                                <div class="total-ans d-flex justify-content-between">
+                                    <h3>ALL Questions</h3>
+                                    <h3 style="color: #007bff;">20</h3>
+                                </div>
+                                <div class="correct-ans d-flex justify-content-between">
+                                    <h4>Correct Answers</h4>
+                                    <h4 class="Correct-ans-given" style="color: #007bff;"></h4>
+                                </div>
+                                <div class="wrong-ans d-flex justify-content-between">
+                                    <h4>Wrong Answers</h4>
+                                    <h4 class="wrong-ans-given" style="color: #007bff;"></h4>
+                                </div>
+                                <div class="skipped-ans d-flex justify-content-between">
+                                    <h4>Skipped Answers</h4>
+                                    <h4 style="color: #007bff;" class="skip-ans-given"></h4>
+                                </div>
+                            </div>
+                            <div class="perc-result">
+                                <h3>Your Percentage is <span class="percentage" style="color: #007bff;"></span></h3>
+                                <div class="perc-line-div">
+                                    <div class="perc-line"></div>
+                                </div>
+                            </div>
+                            <div class="time-result">
+                                <h3>You completed the Quiz in <span class="time" style="color: #007bff;"></span> Seconds</h3>
+                                <div class="time-line-div">
+                                    <div class="time-line"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <footer style="height: 100px;">
+                            <div class="replay-btn-icons">
+                                <div>
+                                    <p class="icons-text mb-0">
+                                        How you felt about the Quiz
+                                    </p>
+                                    <div class="icons">
+                                    <i class="far fa-surprise"></i>
+                                    <i class="far fa-smile-beam"></i>
+                                    <i class="far fa-sad-cry"></i>
+                                    <i class="far fa-meh"></i>
+                                    <i class="far fa-grin-hearts"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btns">
+                                <button class="restart btn" onclick="window.location.href = 'http://localhost:3000/';" >Go back to library</button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
