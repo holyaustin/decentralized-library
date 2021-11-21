@@ -36,7 +36,6 @@ npm run dev
 
 
 Various categories of books are be available in the following areas.
-
 1	Humanities
 1.1	Performing arts
 1.2	Visual arts
