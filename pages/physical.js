@@ -49,21 +49,6 @@ export default function Home() {
         <br />
         <br />
         <br />
-        <center>
-          <footer>
-            <div className="space-x-2 align-middle">
-              <div className="inline-block align-middle text-xl">Powered by</div>
-              <div className="inline-block align-middle">
-                {' '}
-                <img
-                  className="h-10 w-24"
-                  src="https://upload.wikimedia.org/wikipedia/commons/c/c2/IPFS_logo.png"
-                  alt="ipfs logo"
-                />
-              </div>
-            </div>
-          </footer>
-        </center>
       </div>
     </>
   );
