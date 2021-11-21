@@ -84,6 +84,10 @@ export default function Navbar() {
                     Upload
                   </a>
                 </div>
+                <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
+                <span lassName="border-indigo-500 text-gray-900 inline-flex items-center text-md font-medium" id="userDID">Not Connected</span>
+                </div>
+                
               </div>
 
 

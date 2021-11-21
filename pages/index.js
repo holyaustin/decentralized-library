@@ -4,6 +4,8 @@ import Navbar from '../components/navbar';
 import actions from '../data/myindex';
 import Image from 'next/image'
 import banner from '../images/l1.jpg'
+//import '../public/ceramic.css';
+import { ThreeIdConnect, EthereumAuthProvider } from '@3id/connect'
 
 
 
@@ -14,8 +16,26 @@ function classNames(...classes) {
 }
 
 export default function Home() {
+
+  async function Connect() {
+    const threeIdConnect = new ThreeIdConnect()
+    const addresses = await window.ethereum.enable()
+    
+    const authProvider = new EthereumAuthProvider(window.ethereum, addresses[0])
+    
+    await threeIdConnect.connect(authProvider)
+    // await threeIdConnect.connect(authProvider)
+    const provider = await threeIdConnect.getDidProvider()
+    const didProvider = await threeIdConnect.getDidProvider()
+    
+  }
+
+
+
+
   return (
     <>
+    
       <Navbar />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -69,8 +89,15 @@ export default function Home() {
         </div>
         <br />
         <br />
-        <br />
+        <div className="flex-1 min-w-0 ">
+          <center>
+          <button onClick={Connect} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            Connect wallet
+          </button>
 
+      </center>
+      </div>
+        <br />
       </div>
     </>
   );
