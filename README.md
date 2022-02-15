@@ -1,7 +1,7 @@
 Decentralized Library
 
 
-A Decentralized digital Library that uses Web3 to log user in to read book and earn.
+A Decentralized digital Library that uses Web3 to log user in to read books and earn.
 =======
 The need to implement more web2 solutions into web3 have necesitated this idea. Decentralized library is a no-censorship library where users go to read testbooks and watch video books using the wallet.
 
@@ -27,10 +27,16 @@ npm install
 # or
 
 yarn
+
 Start the local Hardhat node
+
 npx hardhat node
+
 With the network running, deploy the contracts to the local network in a separate terminal window
+
 npx hardhat run scripts/deploy.js --network localhost
+
 Start the app
+
 npm run dev
 
